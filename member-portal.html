@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Portal — GEM City Nails</title>
+<meta name="description" content="Sign in to manage your GEM Membership, see your monthly credits, and book your next appointment.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="assets/logo-full-color-trimmed.png" alt="GEM City Nails"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="studio.html#membership">Membership</a>
+      <a href="studio.html">Studio</a>
+      <a href="member-portal.html" class="active">Member Login</a>
+    </div>
+    <a href="services.html#booking" class="nav-cta">Book Now</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero section-tight">
+  <div class="wrap">
+    <span class="label"><span class="dot"></span>Member Portal</span>
+    <h1 style="margin-top:14px; font-size:clamp(2.1rem,4.6vw,3rem);">Welcome back.</h1>
+    <p class="lede" style="margin-top:14px;">Sign in to see your monthly credits, manage your GEM Membership, and book faster.</p>
+  </div>
+</header>
+
+<section class="section-tight" id="login-view">
+  <div class="portal-shell">
+    <div class="login-wrap">
+      <div class="demo-note" style="background:var(--teal-pale);">
+        <div>
+          <strong>Membership launching soon</strong>
+          GEM Memberships aren't open yet — <a href="index.html#waitlist" style="color:var(--teal-deep); font-weight:700;">join the waitlist</a> to be first in line. This portal previews what your dashboard will look like once membership goes live.
+        </div>
+      </div>
+      <div class="demo-note">
+        <div>
+          <strong>Prototype notice</strong>
+          This login is a front-end demo only. Click "Sign In" to preview a sample member dashboard with placeholder data — no real account or password is checked yet. Wire this up to Stripe's Customer Portal, Memberstack, or a custom auth backend to make it live.
+        </div>
+      </div>
+      <div class="login-card">
+        <h2>Sign in</h2>
+        <p style="font-size:13.5px;">Use the email on your GEM Membership.</p>
+        <div class="field">
+          <label for="member-email">Email</label>
+          <input type="email" id="member-email" placeholder="you@email.com">
+        </div>
+        <div class="field">
+          <label for="member-password">Password</label>
+          <input type="password" id="member-password" placeholder="••••••••">
+        </div>
+        <button class="btn btn-primary btn-block" style="margin-top:24px;" id="member-signin">Sign In</button>
+        <div class="login-foot">
+          <a href="#">Forgot password?</a>
+          <a href="studio.html#membership">Not a member yet?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" id="dashboard-view" style="display:none;">
+  <div class="wrap">
+    <div class="demo-note">
+      <div>
+        <strong>Sample data</strong>
+        You're viewing a placeholder dashboard so the studio can see the intended layout. Real credit balances, appointment history, and billing will come from your subscription backend (Stripe Billing / Square Subscriptions) once connected.
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-bottom:26px;">
+      <span class="label">Your Membership</span>
+      <h2>Hi, GEM Member.</h2>
+    </div>
+
+    <div class="dash-grid">
+      <div class="dash-card">
+        <h3>This month's credits</h3>
+        <p style="font-size:13px; margin-bottom:6px;">GEM Membership — $99/mo</p>
+        <div class="progress-track"><div class="progress-fill" style="width:50%;"></div></div>
+        <div class="progress-label"><span>1 of 2 Tier 1 services used</span><span>Resets in 14 days</span></div>
+
+        <div style="margin-top:22px;">
+          <div class="dash-row"><span>Free repair credit</span><span class="amt">Available</span></div>
+          <div class="dash-row"><span>Free color change (alt.)</span><span class="amt">Not used</span></div>
+          <div class="dash-row"><span>Retail discount</span><span class="amt">15% off</span></div>
+        </div>
+        <a href="services.html#booking" class="btn btn-dark" style="margin-top:20px;">Book with a Credit</a>
+      </div>
+
+      <div class="dash-card">
+        <h3>Next appointment</h3>
+        <div class="dash-row"><span>Service</span><span class="amt">Gel Enhancement</span></div>
+        <div class="dash-row"><span>Date</span><span class="amt">Tue, Jul 21</span></div>
+        <div class="dash-row"><span>Time</span><span class="amt">2:30 PM</span></div>
+        <a href="services.html#booking" class="btn btn-ghost btn-block" style="margin-top:18px;">Reschedule</a>
+
+        <h3 style="margin-top:28px;">Manage plan</h3>
+        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+          <button class="btn btn-ghost btn-sm">Pause Membership</button>
+          <button class="btn btn-ghost btn-sm">Cancel Membership</button>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:30px;">
+      <a href="#" id="member-signout" style="font-weight:600; color:var(--teal-deep);">Sign out</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-logo">
+        <img src="assets/logo-full-color-trimmed.png" alt="GEM City Nails">
+        <p style="max-width:34ch;">Gem City Nails — Euclid, OH. Where everyone's a GEM.</p>
+        <span class="footer-cashless">Cashless studio · card &amp; contactless only</span>
+        <p style="margin-top:14px;"><a href="pro-portal.html">GEM PRO Staff Portal →</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="services.html">Service Menu</a>
+        <a href="studio.html#membership">GEM Membership</a>
+        <a href="studio.html#safety">Safety Standards</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p>Euclid, OH</p>
+        <p>Mon–Sat: 8AM–8PM</p>
+        <p>Sun: 10AM–5PM (by appt.)</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GEM City Nails, Inc.</span>
+      <span>gemcitynails.com</span>
+    </div>
+    <p class="brand-credit">GEMpowerment™ — Empowered by <img src="assets/gimmeahand-logo.png" alt="GIMMEAHAND">&reg;</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('member-signin').addEventListener('click', () => {
+    document.getElementById('login-view').style.display = 'none';
+    document.getElementById('dashboard-view').style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  document.getElementById('member-signout').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('login-view').style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+</script>
+</body>
+</html>

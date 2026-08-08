@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEM PRO Portal — Staff</title>
+<meta name="description" content="Staff sign-in for GEM City Nails technicians — view open shifts and claim your table for the week.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav staff-nav">
+  <div class="wrap">
+    <div style="display:flex; align-items:center;">
+      <a href="pro-portal.html" class="logo"><img src="assets/logo-bone-trimmed.png" alt="GEM City Nails"></a>
+      <span class="staff-badge">GEM PRO</span>
+    </div>
+    <div class="nav-links">
+      <a href="pro-portal.html" class="active">Shift Board</a>
+      <a href="index.html">Customer Site →</a>
+    </div>
+    <a href="#" id="staff-signout-top" class="nav-cta" style="display:none;">Sign Out</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero section-tight">
+  <div class="wrap">
+    <span class="label"><span class="dot"></span>Staff Only</span>
+    <h1 style="margin-top:14px; font-size:clamp(2.1rem,4.6vw,3rem);">GEM PRO Portal.</h1>
+    <p class="lede" style="margin-top:14px;">See what's open this week and claim your table before it fills.</p>
+  </div>
+</header>
+
+<section class="section-tight" id="staff-login-view">
+  <div class="portal-shell">
+    <div class="login-wrap">
+      <div class="demo-note">
+        <div>
+          <strong>Prototype notice</strong>
+          This is a front-end demo — no real staff accounts exist yet. Click "Sign In" to preview the shift board. A real build needs staff accounts and a backend that locks a table the moment it's claimed, so two technicians can't grab the same one.
+        </div>
+      </div>
+      <div class="login-card">
+        <h2>Staff sign in</h2>
+        <p style="font-size:13.5px;">Use your GEM City Nails staff ID.</p>
+        <div class="field">
+          <label for="staff-id">Staff ID</label>
+          <input type="text" id="staff-id" placeholder="e.g. GCN-014">
+        </div>
+        <div class="field">
+          <label for="staff-pin">PIN</label>
+          <input type="password" id="staff-pin" placeholder="••••">
+        </div>
+        <button class="btn btn-primary btn-block" style="margin-top:24px;" id="staff-signin">Sign In</button>
+        <div class="login-foot">
+          <a href="#">Forgot PIN?</a>
+          <a href="index.html">Back to site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" id="staff-dashboard-view" style="display:none;">
+  <div class="wrap">
+    <div class="demo-note">
+      <div>
+        <strong>Sample data</strong>
+        Shifts and table numbers below are placeholders so the studio can review the layout. Claiming a shift updates this screen only — nothing is saved once you leave the page until a real backend is connected.
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-bottom:20px;">
+      <span class="label">This Week</span>
+      <h2>Open shifts &amp; tables.</h2>
+      <p class="lede" style="margin-top:10px;">Tap an open shift to claim your table for that block.</p>
+    </div>
+
+    <div class="claimed-summary empty" id="claimed-summary">
+      You haven't claimed any shifts yet — tap "Claim" on an open slot below.
+    </div>
+
+    <div class="shift-board" id="shift-board"></div>
+    <p class="judy-credit" style="text-align:center;">Shift board kept in sync by JUDY.</p>
+
+    <p style="text-align:center; margin-top:34px;">
+      <a href="#" id="staff-signout" style="font-weight:600; color:var(--teal-deep);">Sign out</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2026 GEM City Nails, Inc. — Internal Staff Tool</span>
+      <a href="index.html" style="color:var(--teal-deep); font-weight:600;">Back to gemcitynails.com</a>
+    </div>
+    <p class="brand-credit">GEMpowerment™ — Empowered by <img src="assets/gimmeahand-logo.png" alt="GIMMEAHAND">&reg;</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="portal.js"></script>
+</body>
+</html>
